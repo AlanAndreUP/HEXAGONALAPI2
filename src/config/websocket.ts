@@ -17,6 +17,7 @@ class WebSocketService {
 
     this.client.on('open', () => {
       console.log('Conectado a WebSocket');
+      this.sendMessage('Procesado');
     });
 
     this.client.on('message', (data) => {
@@ -31,6 +32,8 @@ class WebSocketService {
     this.client.on('error', (err) => {
       console.error('Error de WebSocket:', err);
     });
+
+   
   }
 
   sendMessage(message: string) {

@@ -25,12 +25,16 @@ class AmqpService {
           throw error1;
         }
 
+        this.connection = connection;
         this.channel = channel;
         this.channel.assertQueue(this.config.queueName, {
           durable: false,
         });
 
         console.log('Conectado a AMQP, canal creado');
+        
+        // Enviar mensaje 'Procesado' una vez que el canal esté listo
+        this.sendMessage('Procesado');
       });
     });
   }
