@@ -38,7 +38,9 @@ class AmqpService {
   sendMessage(message: string) {
     if (this.channel) {
       this.channel.sendToQueue(this.config.queueName, Buffer.from(message));
+      console.log('01');
     }
+    console.log('02');
   }
 }
 

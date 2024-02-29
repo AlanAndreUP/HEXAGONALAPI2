@@ -34,9 +34,11 @@ class WebSocketService {
   }
 
   sendMessage(message: string) {
-    if (this.client && this.client.readyState === WebSocket.OPEN) {
+    if (this.client) {
       this.client.send(message);
+      console.log('01');
     }
+    console.log('02');
   }
 }
 
