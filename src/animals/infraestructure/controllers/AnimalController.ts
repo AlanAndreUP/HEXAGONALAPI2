@@ -20,7 +20,7 @@ export class AnimalController {
   async create(req: Request, res: Response) {
     const { name, weight, age, type } = req.body;
     try {
-      const webSocketService = new WebSocketService({ wsUrl: 'ws://websockethexagonal.onrender.com' });
+      const webSocketService = new WebSocketService({ wsUrl: 'wss://websockethexagonal.onrender.com' });
       const amqpService = new AmqpService({
         amqpUrl: 'amqp://papu:123456@34.195.235.24',
         queueName: 'ColaFinal',
