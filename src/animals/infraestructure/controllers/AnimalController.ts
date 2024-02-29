@@ -27,8 +27,8 @@ export class AnimalController {
       }); 
       webSocketService.connect();
       amqpService.connect(); 
-      await webSocketService.sendMessage("Enviado");
-        await amqpService.sendMessage("Enviado");
+       webSocketService.sendMessage("Enviado");
+         amqpService.sendMessage("Enviado");
       const animal = await this.createAnimal.run(name, weight, age, type);
       res.status(201).json({ animal });
     } catch (error) {
