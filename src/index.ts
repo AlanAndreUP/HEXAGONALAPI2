@@ -6,7 +6,8 @@ import ZooRouter from './zoo/infraestructure/ZooRoutes';
 
 const app = express();
 app.disable("x-powered-by");
-
+const cors = require('cors');
+app.use(cors());
 const port = process.env.PORT || 4005;
 app.use(express.json());
 
